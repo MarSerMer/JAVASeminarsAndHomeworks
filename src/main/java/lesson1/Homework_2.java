@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class Homework_2 {
     public static void main(String[] args) {
-        //task_1_hw_2();
+        task_1_hw_2();
         task_2_hw_2();
     }
     private  static  void task_1_hw_2() {
@@ -43,19 +43,15 @@ public class Homework_2 {
         // который запишет эту строку в простой текстовый файл,
         // обработайте исключения.
         makeStringOf100TEST();
-        //String a = "C:\\Users\\User\\Desktop\\Geek Brains\\9 JAVA\\JAVA_seminars\\JAVA_seminar_1\\src\\main\\java\\lesson1\\ForHomeWork2.txt";
         stringToFile(makeStringOf100TEST(), "C:\\Users\\User\\Desktop\\Geek Brains\\9 JAVA\\JAVA_seminars\\JAVA_seminar_1\\src\\main\\java\\lesson1\\ForHomeWork2.txt");
     }
     private static StringBuilder makeStringOf100TEST () {
         StringBuilder str = new StringBuilder();
-        for (int i = 0; i<100; i++){
-            str.append("TEST ");
-        }
+        str.append("TEST ".repeat(100));
         System.out.println(str);
         return (str);
     }
     private static void stringToFile(StringBuilder str, String path) {
-        //File fileForString = new File(path);
         try (PrintWriter pw = new PrintWriter(path)){
             pw.print(str);
         } catch (FileNotFoundException e) {
